@@ -177,18 +177,13 @@ Gemini APIを活用した**AIイベント検索**は、過去の旅から未来�
 
 前回のハッカソンで制作したプロトタイプからの主な変更点は以下の通りです。
 
-| 項目 | プロトタイプ（Streamlit版） | 今回（v2・React版） |
+| 項目 | プロトタイプ | 今回（v2） |
 |------|-----------|-----------|
-| **フレームワーク** | Streamlit (Python) | React 18 / TypeScript / Vite |
-| **AI機能** | Gemini APIでお祭り検索（テキストベース） | Gemini APIで写真解析・ムード判定・イベント検索（画像入力対応） |
-| **ニュース検索** | なし | Perplexity APIによる周辺ニュース |
-| **データ管理** | Google Spreadsheet + Google Drive | Supabase（PostgreSQL / Storage） |
-| **写真管理** | EXIF解析＋訪問マッチング | ギャラリー・アーカイブ・位置補正・リバースジオコーディング |
-| **統計・可視化** | 訪問ヒートマップ | 都道府県カバー率・撮影統計・ヒートマップ |
-| **ソーシャル** | なし | フィード・いいね・コメント・ハッシュタグ |
-| **インフラ** | Cloud Run（Streamlit） | Cloud Run（Docker + Nginx） |
-| **CI/CD** | 手動デプロイ | Cloud Build による自動ビルド・デプロイ |
-| **開発ツール** | 手動コーディング + Streamlit | Lovable（AI生成）+ 手動調整 |
+| **UI / フレームワーク** | Streamlit（Python） | React + TypeScript + Vite |
+| **AI活用** | テキストベースのお祭り検索 | 写真画像の解析・ムード判定・イベント検索・ニュース検索 |
+| **データ基盤** | Google Spreadsheet + Drive | Supabase（PostgreSQL / Storage / Auth / Realtime） |
+| **ソーシャル機能** | なし | フィード・いいね・コメント |
+| **CI/CD** | 手動デプロイ | Lovable → GitHub → Cloud Build 自動デプロイ |
 
 ---
 

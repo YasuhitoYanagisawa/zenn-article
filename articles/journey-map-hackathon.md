@@ -8,7 +8,7 @@ published: false
 
 ## 🚀 はじめに
 
-本記事は [Google Cloud AI Hackathon vol. 4](https://zenn.dev/hackathons/google-cloud-japan-ai-hackathon-vol4) の応募作品として開発した **「Journey Map」** についてご紹介します。
+本記事は [第4回 Agentic AI Hackathon with Google Cloud](https://zenn.dev/hackathons/google-cloud-japan-ai-hackathon-vol4) の応募作品として開発した **「Journey Map」** についてご紹介します。
 
 旅行から帰ってきて、スマホの写真フォルダを眺めながら「あの場所、何てところだったっけ？」「近くでお祭りやってたんだ、行けばよかった…」と思ったことはありませんか？
 
@@ -177,15 +177,18 @@ Gemini APIを活用した**AIイベント検索**は、過去の旅から未来�
 
 前回のハッカソンで制作したプロトタイプからの主な変更点は以下の通りです。
 
-| 項目 | プロトタイプ | 今回（v2） |
+| 項目 | プロトタイプ（Streamlit版） | 今回（v2・React版） |
 |------|-----------|-----------|
-| **AI機能** | なし | Gemini写真解析・イベント検索・ムード判定 |
+| **フレームワーク** | Streamlit (Python) | React 18 / TypeScript / Vite |
+| **AI機能** | Gemini APIでお祭り検索（テキストベース） | Gemini APIで写真解析・ムード判定・イベント検索（画像入力対応） |
 | **ニュース検索** | なし | Perplexity APIによる周辺ニュース |
-| **写真管理** | 基本的な表示のみ | ギャラリー・アーカイブ・位置補正 |
-| **統計** | なし | 都道府県カバー率・撮影統計 |
-| **ソーシャル** | なし | フィード・いいね・コメント |
-| **インフラ** | Vercel | Google Cloud Run + Cloud Build |
-| **開発ツール** | 手動コーディング | Lovable（AI生成） |
+| **データ管理** | Google Spreadsheet + Google Drive | Supabase（PostgreSQL / Storage） |
+| **写真管理** | EXIF解析＋訪問マッチング | ギャラリー・アーカイブ・位置補正・リバースジオコーディング |
+| **統計・可視化** | 訪問ヒートマップ | 都道府県カバー率・撮影統計・ヒートマップ |
+| **ソーシャル** | なし | フィード・いいね・コメント・ハッシュタグ |
+| **インフラ** | Cloud Run（Streamlit） | Cloud Run（Docker + Nginx） |
+| **CI/CD** | 手動デプロイ | Cloud Build による自動ビルド・デプロイ |
+| **開発ツール** | 手動コーディング + Streamlit | Lovable（AI生成）+ 手動調整 |
 
 ---
 
